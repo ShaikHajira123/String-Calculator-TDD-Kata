@@ -22,3 +22,8 @@ test('Multiple numbers should return their sum', () => {
     expect(Add("5,10,15,20")).toBe(50);
     expect(Add("5.5,10.5,19,10.50")).toBe(45.5);
 });
+
+
+test('Newlines between numbers should be allowed', () => {
+    expect(Add("1\n2,3")).toBe(6);
+});
