@@ -27,3 +27,15 @@ test('Multiple numbers should return their sum', () => {
 test('Newlines between numbers should be allowed', () => {
     expect(Add("1\n2,3")).toBe(6);
 });
+
+
+test('Custom delimiter should be allowed', () => {
+    expect(Add("//;\n1;2")).toBe(3);
+    expect(Add("//|\n5|6|7")).toBe(18);
+});
+
+
+test('Negative numbers should throw an exception', () => {
+    expect(() => Add("1,-2,3")).toThrow("Negative numbers not allowed: -2");
+    expect(() => Add("//;\n1;-2;-3")).toThrow("Negative numbers not allowed: -2, -3");
+});
