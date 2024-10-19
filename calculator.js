@@ -19,7 +19,7 @@ function Add(numbers) {
         throw new Error(`Negative numbers not allowed: ${negatives.join(", ")}`);
     }
 
-    return numbersArray.reduce((acc, num) => acc + Number(num), 0);
+    return numbersArray.filter(num => num <= 1000).reduce((acc, num) => acc + Number(num), 0);
 }
 
 module.exports = Add;
